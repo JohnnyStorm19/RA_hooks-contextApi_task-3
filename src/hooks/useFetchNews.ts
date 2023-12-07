@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { INews } from "../models";
+import { DEFAULT_URL } from "../globals";
 
 const useFetchNews = ({
   isLogged,
@@ -14,7 +15,7 @@ const useFetchNews = ({
   useEffect(() => {
       const fetchNews = async () => {
         try {
-          const response = await fetch("http://localhost:7070/private/news", {
+          const response = await fetch(`${DEFAULT_URL}/private/news`, {
             method: "GET",
             headers: {
               Authorization: "Bearer " + token.token,

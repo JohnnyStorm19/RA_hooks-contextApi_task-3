@@ -1,0 +1,1 @@
+export const DEFAULT_URL = 'https://ra-hooks-contextapi-task-3-backend.onrender.com'

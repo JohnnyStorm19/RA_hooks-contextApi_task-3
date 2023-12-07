@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { IUserData } from "../models";
+import { DEFAULT_URL } from "../globals";
 
 const useProfileRequest = (isLogged: boolean, token: { token: string }) => {
   const [userData, setUserData] = useState<IUserData | null>(null);
@@ -8,7 +9,7 @@ const useProfileRequest = (isLogged: boolean, token: { token: string }) => {
   useEffect(() => {
       const fetchUserProfile = async () => {
         try {
-          const response = await fetch("http://localhost:7070/private/me", {
+          const response = await fetch(`${DEFAULT_URL}/private/me`, {
             method: "GET",
             headers: {
               Authorization: "Bearer " + token.token,

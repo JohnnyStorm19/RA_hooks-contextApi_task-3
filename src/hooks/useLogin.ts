@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { DEFAULT_URL } from "../globals";
 
 const useLogin = (submittedData: {
   userLogin: string;
@@ -18,7 +19,7 @@ const useLogin = (submittedData: {
 
       const { userLogin, userPassword } = submittedData;
       try {
-        const response = await fetch("http://localhost:7070/auth", {
+        const response = await fetch(`${DEFAULT_URL}/auth`, {
           method: "POST",
           body: JSON.stringify({ login: userLogin, password: userPassword }),
         });
