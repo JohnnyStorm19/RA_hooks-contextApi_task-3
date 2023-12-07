@@ -1,0 +1,10 @@
+.myError {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: red;
+    font-weight: bold;
+    font-size: 2rem;
+}
